@@ -6,9 +6,9 @@ const siteInfo = {
 const publishers = [
   {
   "id": "qhxk-edu",
-  "name": "上海清华新课标教育图书",
-  "series": "教学设计与指导",
-  "logo": "📘",
+    "name": "上海清华新课标教育图书",
+    "series": "教学设计与指导",
+    "logo": '<svg viewBox="0 0 48 48" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vPurple" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4a36c9"/><stop offset="100%" stop-color="#6c5ce7"/></linearGradient></defs><rect width="48" height="48" rx="10" fill="url(#vPurple)"/><text x="24" y="33" text-anchor="middle" font-size="24" font-weight="700" fill="#fff" font-family="\'PingFang SC\',\'Microsoft YaHei\',sans-serif">清</text><rect x="18" y="39" width="12" height="1.5" rx="0.75" fill="rgba(255,255,255,0.45)"/></svg>',
   "description": "华东师范大学出版社出版 · 《教学设计与指导》系列样书",
   "trialType": "iframe",
   "trialUrl": "https://book.yunzhan365.com/bookcase/vjud/index.html",
@@ -31,6 +31,7 @@ const publishers = [
                     "title": "2025年秋版 统编版小学语文 教学设计与指导 一年级上册",
                     "url": "https://book.yunzhan365.com/luloc/vool/",
                     "pages": 32,
+                    "label": "推荐",
                     "bLink": "vool",
                     "cover": "https://book.yunzhan365.com/luloc/vool/files/shot.jpg?1"
                   },
@@ -159,6 +160,7 @@ const publishers = [
                     "title": "2025年秋版 人教版小学数学教科书教学设计与指导 一年级上册",
                     "url": "https://book.yunzhan365.com/luloc/xswa/",
                     "pages": 32,
+                    "label": "推荐",
                     "bLink": "xswa",
                     "cover": "https://book.yunzhan365.com/luloc/xswa/files/shot.jpg?1"
                   },
@@ -423,6 +425,7 @@ const publishers = [
                     "title": "2025年秋版 人教版小学英语教科书教学设计与指导 三年级上册",
                     "url": "https://book.yunzhan365.com/luloc/rjnc/",
                     "pages": 32,
+                    "label": "推荐",
                     "bLink": "rjnc",
                     "cover": "https://book.yunzhan365.com/luloc/rjnc/files/shot.jpg?1"
                   },
@@ -1300,6 +1303,7 @@ const publishers = [
                     "title": "2025年秋版 人教版初中生物学教科书教学设计与指导 七年级上册",
                     "url": "https://book.yunzhan365.com/luloc/zvvc/",
                     "pages": 32,
+                    "label": "新书",
                     "bLink": "zvvc",
                     "cover": "https://book.yunzhan365.com/luloc/zvvc/files/shot.jpg?2"
                   },
@@ -1378,6 +1382,7 @@ const publishers = [
                     "title": "2025年秋版 人教版初中物理教科书教学设计与指导 八年级上册",
                     "url": "https://book.yunzhan365.com/luloc/dxhs/",
                     "pages": 32,
+                    "label": "推荐",
                     "bLink": "dxhs",
                     "cover": "https://book.yunzhan365.com/luloc/dxhs/files/shot.jpg?1"
                   },
@@ -2122,7 +2127,7 @@ const publishers = [
     "id": "ybjy-edu",
     "name": "延边教育出版社",
     "series": "鼎尖教案",
-    "logo": "📕",
+    "logo": '<svg viewBox="0 0 48 48" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vAmber" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#BA7517"/><stop offset="100%" stop-color="#D9A441"/></linearGradient></defs><rect width="48" height="48" rx="10" fill="url(#vAmber)"/><text x="24" y="33" text-anchor="middle" font-size="24" font-weight="700" fill="#fff" font-family="\'PingFang SC\',\'Microsoft YaHei\',sans-serif">延</text><rect x="18" y="39" width="12" height="1.5" rx="0.75" fill="rgba(255,255,255,0.45)"/></svg>',
     "description": "《鼎尖教案》系列样书 · 覆盖小学与初中全学段",
     "trialType": "iframe",
     "trialUrl": "https://mp.zhizhuma.com/webappv2/electronicBook/cookBook-tii8td.htm?code=F31329383D9",
@@ -3939,7 +3944,7 @@ const publishers = [
     "id": "sxzj-cl",
     "name": "陕西中教创联文化发展有限公司",
     "series": "素养教案",
-    "logo": "📘",
+    "logo": '<svg viewBox="0 0 48 48" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vBlue" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#185FA5"/><stop offset="100%" stop-color="#378ADD"/></linearGradient></defs><rect width="48" height="48" rx="10" fill="url(#vBlue)"/><text x="24" y="33" text-anchor="middle" font-size="24" font-weight="700" fill="#fff" font-family="\'PingFang SC\',\'Microsoft YaHei\',sans-serif">中</text><rect x="18" y="39" width="12" height="1.5" rx="0.75" fill="rgba(255,255,255,0.45)"/></svg>',
     "description": "《素养教案》系列样书 · 覆盖小学与初中",
     "trialType": "iframe",
     "trialUrl": "https://book.yunzhan365.com/bookcase/ircs/index.html",
