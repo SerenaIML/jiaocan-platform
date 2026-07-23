@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="广西教师用书 · 试阅平台 — 汇集多家出版社的教学参考书与教案资源，按学段、学科、版本分类展示，一键试阅">
+  <meta name="theme-color" content="#4a36c9">
+  <title>广西教师用书 · 试阅平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <span class="header-title">
+        <svg class="header-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        广西教师用书 · 试阅平台
+      </span>
+      <span class="header-badge">📱 手机 / 电脑均可</span>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="heroSection">
+    <div class="hero-bg-pattern"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          教学参考书与教案<br>
+          <span class="hero-title-accent">一站式在线试阅</span>
+        </h1>
+        <p class="hero-desc">汇集多家出版社的教学参考书与教案资源，按学段、学科、版本分类展示，一键在线试阅</p>
+        <span class="hero-divider"></span>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-card" data-delay="0">
+          <span class="stat-number">—</span>
+          <span class="stat-label">教参资源</span>
+        </div>
+        <div class="stat-card" data-delay="100">
+          <span class="stat-number">—</span>
+          <span class="stat-label">覆盖学科</span>
+        </div>
+        <div class="stat-card" data-delay="200">
+          <span class="stat-number">—</span>
+          <span class="stat-label">学段覆盖</span>
+        </div>
+        <div class="stat-card" data-delay="300">
+          <span class="stat-number">—</span>
+          <span class="stat-label">教材版本</span>
+        </div>
+      </div>
+      <div class="search-bar" id="searchBar">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="搜索书名、学科或版本…" autocomplete="off">
+        <button class="search-clear" id="searchClear">✕</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publishers Catalog with Sidebar -->
+  <main class="main-layout" id="mainContent">
+    <div class="container main-inner">
+      <div id="publisherContainer" class="publisher-area"></div>
+      <aside class="side-panel">
+        <!-- Quick jump navigation -->
+        <div class="side-card">
+          <h3 class="side-title">出版社速览</h3>
+          <nav class="side-nav" id="sideNav"></nav>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="side-card side-disclaimer">
+          <h3 class="side-title">📢 声明</h3>
+          <p class="disclaimer-line"><strong>本平台开发仅以测试及试阅为目的，请勿外传。</strong></p>
+          <p class="disclaimer-line">如有订阅需求，请联系当地新华书店。</p>
+          <p class="disclaimer-line">平台使用资源版权归出版社所有。</p>
+        </div>
+
+        <!-- Decorative quote -->
+        <div class="side-card side-quote">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">读书是教师最好的修行，教参是教学最实在的依靠。</p>
+        </div>
+
+        <!-- Tips card -->
+        <div class="side-card side-tips">
+          <h3 class="side-title">使用提示</h3>
+          <ul class="tips-list">
+            <li><span class="tips-num">1</span>点击任一图书卡片或"试阅"按钮，即可在线预览内容</li>
+            <li><span class="tips-num">2</span>学段标签可在小学/初中间切换</li>
+            <li><span class="tips-num">3</span>点击"进入书城试阅"可查看完整书城</li>
+          </ul>
+        </div>
+
+        <!-- Decorative book stack -->
+        <div class="side-card side-decoration">
+          <div class="deco-book deco-book-1"></div>
+          <div class="deco-book deco-book-2"></div>
+          <div class="deco-book deco-book-3"></div>
+          <div class="deco-book deco-book-4"></div>
+          <div class="deco-book deco-book-5"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">广西教师用书 · 试阅平台 — 为广大教师提供便捷的教参资源在线试阅服务</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
