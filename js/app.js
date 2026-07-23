@@ -17,12 +17,24 @@ function openBook(bookUrl, bookTitle) {
   }
 }
 
-// Subject icons for visual enrichment
+// Subject icons as inline SVG (20x20 linear icons)
 const subjectIcons = {
-  '语文': '📖', '数学': '📐', '英语': '🌍', '道德与法治': '⚖️',
-  '历史': '📜', '地理': '🌏', '生物': '🧬', '化学': '🧪',
-  '物理': '⚡', '科学': '🔬', '思想政治': '🏛️', '音乐': '🎵',
-  '美术': '🎨', '体育': '🏃', '信息技术': '💻', '通用技术': '🔧'
+  '语文': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20M4 6h16M4 12h16M4 18h12"/></svg>',
+  '数学': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 20c3-8 5 4 9-4s6 8 9-2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>',
+  '英语': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20l6-16 6 16M9.5 14h9"/></svg>',
+  '道德与法治': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v15M8 21h8"/><path d="M4 8l4 4M20 8l-4 4"/></svg>',
+  '历史': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2h12v20H6z"/><path d="M9 7h6M9 11h6"/></svg>',
+  '地理': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>',
+  '生物': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M12 2a8 8 0 018 8"/><path d="M12 10a8 8 0 01-8 8"/></svg>',
+  '化学': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 21h8l4-16"/><path d="M12 5v8"/><path d="M10 13h4"/></svg>',
+  '物理': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(-60 12 12)"/></svg>',
+  '科学': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2v12a4 4 0 01-8 0V2"/><path d="M6 2h8"/></svg>',
+  '思想政治': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l2 7h7l-5.5 4.5L18 21l-6-4.5L6 21l2.5-7.5L3 9h7z"/></svg>',
+  '音乐': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+  '美术': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a7 7 0 000 14c1.5 0 3-1 3-3s-1-2-1-3 1-2 2-2 2 1 3 1 2-1 2-3"/></svg>',
+  '体育': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="14" cy="4" r="2"/><path d="M10.5 10l-3 8 5 1 2 5"/><path d="M16 7l-2 4 4 3"/></svg>',
+  '信息技术': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>',
+  '通用技术': '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4 4l2 2M18 18l2 2M1 12h3M20 12h3M4 20l2-2M18 6l2-2"/></svg>'
 };
 
 // Count totals for hero stats
@@ -142,6 +154,8 @@ function renderPublishers() {
 
     html += `
       <div class="publisher-card ${brandClass}" id="pub-${pub.id}" data-id="${pub.id}">
+        <div class="publisher-corner"></div>
+        <div class="card-strip-line"></div>
         <div class="publisher-header">
           <div class="publisher-header-top">
             <div class="publisher-logo">${pub.logo}</div>
@@ -157,7 +171,11 @@ function renderPublishers() {
           </div>
         </div>
         <div class="publisher-covers">${coversHtml}</div>
-        <button class="enter-trial-btn" data-pub-id="${escapeAttr(pub.id)}">📖 进入书城试阅</button>
+        <button class="enter-trial-btn" data-pub-id="${escapeAttr(pub.id)}">
+          <span class="enter-trial-deco"></span>
+          <span class="enter-trial-text">📖 进入书城试阅</span>
+          <span class="enter-trial-deco"></span>
+        </button>
         <div class="category-section">
           ${renderStages(pub)}
         </div>
@@ -239,9 +257,10 @@ function renderSubjects(pubId, stage) {
   stage.subjects.forEach((subj, idx) => {
     const icon = subjectIcons[subj.name] || '📚';
     const isFirst = !idx ? '' : '';
+    const subjClass = 'subj-' + subj.name.replace(/\s+/g, '');
 
     html += `
-      <div class="subject-row open" data-pub="${pubId}" data-stage="${stage.stage}" data-subj="${subj.name}">
+      <div class="subject-row open ${subjClass}" data-pub="${pubId}" data-stage="${stage.stage}" data-subj="${subj.name}">
         <div class="subject-row-head">
           <span class="subject-name"><span class="subject-icon">${icon}</span>${subj.name}</span>
           <span class="subject-count">${subj.count} 本</span>
@@ -347,8 +366,10 @@ function renderBookCardFlat(book) {
     <div class="book-card book-card-flat" data-url="${escapeAttr(book.url || '')}" data-title="${safeTitle}">
       <div class="book-cover-wrap">
         ${coverHtml}
+        <div class="book-spine-line"></div>
         ${book.cover ? '' : placeholderHtml}
         ${term ? `<span class="book-cover-tag">${escapeHtml(term)}</span>` : ''}
+        ${book.label ? `<span class="book-cover-badge">${escapeHtml(book.label)}</span>` : ''}
       </div>
       <div class="book-card-body">
         <div class="book-card-title">${shortTitle}</div>
@@ -412,38 +433,11 @@ function showNotification(msg) {
 
 // Event delegation
 document.addEventListener('click', (e) => {
-  // Subject row expand
+  // Subject row expand — smooth toggle via class
   const subjectHead = e.target.closest('.subject-row-head');
   if (subjectHead) {
     const row = subjectHead.parentElement;
-    const body = row.querySelector('.subject-row-body');
-    const isOpen = body.style.display !== 'none';
-    body.style.display = isOpen ? 'none' : 'block';
-    row.classList.toggle('open', !isOpen);
-    return;
-  }
-
-  // Grade tile expand
-  const gradeHead = e.target.closest('.grade-tile-head');
-  if (gradeHead) {
-    const tile = gradeHead.parentElement;
-    const body = tile.querySelector('.grade-tile-body');
-    const isOpen = body.style.display !== 'none';
-    body.style.display = isOpen ? 'none' : 'block';
-    tile.classList.toggle('open', !isOpen);
-    return;
-  }
-
-  // Version tab switch
-  const versionTab = e.target.closest('.version-tab');
-  if (versionTab) {
-    const version = versionTab.dataset.version;
-    const subjectRow = versionTab.closest('.subject-row-body');
-    subjectRow.querySelectorAll('.version-tab').forEach(t => t.classList.remove('active'));
-    versionTab.classList.add('active');
-    subjectRow.querySelectorAll('.version-content').forEach(c => {
-      c.classList.toggle('active', c.dataset.version === version);
-    });
+    row.classList.toggle('open');
     return;
   }
 
@@ -503,4 +497,142 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     renderPublishers();
   }, 400);
+});
+
+// ====== Search Logic ======
+
+// Build flat search index of all books
+let searchIndex = [];
+
+function buildSearchIndex() {
+  searchIndex = [];
+  publishers.forEach(pub => {
+    pub.categories.forEach(cat => {
+      cat.subjects.forEach(subj => {
+        subj.versions.forEach(ver => {
+          Object.entries(ver.grades).forEach(([grade, books]) => {
+            books.forEach(book => {
+              searchIndex.push({
+                pubId: pub.id,
+                pubName: pub.name,
+                stage: cat.stage,
+                subject: subj.name,
+                version: ver.version,
+                grade: grade,
+                title: book.title,
+                url: book.url,
+                cover: book.cover,
+                pages: book.pages,
+                term: book.term,
+                bLink: book.bLink
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+}
+
+function searchBooks(query) {
+  if (!query || query.trim().length < 2) return [];
+  // Split by space for multi-keyword search (AND match)
+  const keywords = query.trim().toLowerCase().split(/\s+/).filter(k => k.length > 0);
+  return searchIndex.filter(item => {
+    const haystack = [item.title, item.subject, item.version, item.grade, item.pubName, item.stage]
+      .map(s => (s || '').toLowerCase()).join(' ');
+    return keywords.every(kw => haystack.includes(kw));
+  });
+}
+
+function renderSearchResults(results) {
+  const container = document.getElementById('publisherContainer');
+  if (!container) return;
+
+  if (results.length === 0) {
+    const q = document.getElementById('searchInput').value;
+    container.innerHTML = `
+      <div class="search-no-results">
+        <div class="icon">🔍</div>
+        <p>未找到"${escapeHtml(q)}"相关的结果</p>
+        <p class="hint">试试搜索书名、学科（语文/数学）、版本（人教版/北师大版）或年级</p>
+      </div>
+    `;
+    return;
+  }
+
+  let html = `<div class="search-results-wrapper"><div class="search-results-header"><span class="search-results-title">搜索到 ${results.length} 本</span></div><div class="book-grid book-grid-flat">`;
+  let currentPub = '';
+  results.forEach((book, idx) => {
+    if (book.pubId !== currentPub) {
+      html += `<div class="search-pub-header">${escapeHtml(book.pubName)}</div>`;
+      currentPub = book.pubId;
+    }
+    const color = getCoverColor(book.title);
+    const safeTitle = escapeHtml(book.title);
+    const coverHtml = book.cover
+      ? `<img class="book-cover-img" src="${escapeAttr(book.cover)}" alt="" loading="lazy" onerror="this.parentElement.classList.add('no-img');this.remove()">`
+      : '';
+    html += `
+      <div class="book-card book-card-flat" data-url="${escapeAttr(book.url || '')}" data-title="${safeTitle}">
+        <div class="book-cover-wrap">
+          ${coverHtml}
+          <div class="book-spine-line"></div>
+          ${book.term ? `<span class="book-cover-tag">${escapeHtml(book.term)}</span>` : ''}
+          ${book.label ? `<span class="book-cover-badge">${escapeHtml(book.label)}</span>` : ''}
+        </div>
+        <div class="book-card-body">
+          <div class="book-card-title">${safeTitle}</div>
+          <div class="book-card-info">
+            <span class="info-tag info-grade">${escapeHtml(book.grade)}</span>
+            <span class="info-tag info-term">${escapeHtml(book.term)}</span>
+            <span class="info-tag info-version">${escapeHtml(book.version)}</span>
+          </div>
+          <div class="book-card-footer">
+            <span class="book-card-pages">${book.pages || '?'}页</span>
+            <button class="book-card-btn" data-url="${escapeAttr(book.url || '')}" data-title="${safeTitle}">试阅</button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  html += '</div></div>';
+  container.innerHTML = html;
+}
+
+// Init search
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('searchInput');
+  const clearBtn = document.getElementById('searchClear');
+  if (!input) return;
+
+  // Build search index after data is available
+  setTimeout(() => {
+    buildSearchIndex();
+  }, 500);
+
+  let searchTimer = null;
+  input.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    const q = input.value.trim();
+    clearBtn.classList.toggle('visible', q.length > 0);
+
+    if (!q || q.length < 2) {
+      // Restore normal view
+      setTimeout(() => renderPublishers(), 50);
+      return;
+    }
+
+    searchTimer = setTimeout(() => {
+      const results = searchBooks(q);
+      renderSearchResults(results);
+    }, 200);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.classList.remove('visible');
+    renderPublishers();
+    input.focus();
+  });
 });
